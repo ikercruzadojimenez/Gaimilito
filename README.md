@@ -1,5 +1,10 @@
 # gaimilito
 
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20Windows-0288D1?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In%20Progress%20(Frontend%20Complete)-success?style=for-the-badge)
+
 Cross-platform personal productivity, assistant, and automated job-search application for **Android** and **Windows**, built with a 100% free-tier architecture.
 
 ## Key Features
@@ -9,31 +14,22 @@ Cross-platform personal productivity, assistant, and automated job-search applic
 - **Job Search & Anti-Duplicate Control (`lib/buscador_view.dart`):** Filter opportunities by role, location, and source (Google/LinkedIn) with duplicate-contact protection.
 - **Drafts & CRM (`lib/correos_view.dart`):** Expandable editable email drafts (*Approve & Send* / *Discard*) and responsive grid for positive company replies with interview detection and Google Calendar scheduling.
 
-## Tech Stack (Zero-Cost Architecture)
-
-- **Frontend:** Flutter (Dart) — Android & Windows
-- **Database & Push Notifications:** Firebase Firestore & Firebase Cloud Messaging (FCM)
-- **Backend & Automation:** Google Apps Script, Gemini API (free tier), Gmail API, Google Drive & Google Calendar
-
-## Roadmap
-
-- [x] **Phase 1:** Adaptive Flutter layout (Android/Windows) & centralized 60-30-10 color palette
-- [x] **Phase 2:** Daily/Weekly/Global Goals view & Job Search with anti-duplicate lock
-- [x] **Phase 3:** Editable Email Drafts & Selected Companies CRM view
-- [ ] **Phase 3.6:** Firebase Firestore real-time sync & FCM push notifications
-- [ ] **Phase 4:** Google Apps Script + Gemini API backend (AI draft writer, fail-safe inbox filter & Calendar integration)
-- [ ] **Phase 5:** Personal Assistant mode (Daily Briefing, natural-language quick capture & integrated daily agenda)
-
 ## Screenshots
 
-*(Screenshots of Android & Windows views coming soon)*
+| Desktop (Windows) — Goals & Sidebar | Desktop (Windows) — Job Search |
+| :---: | :---: |
+| ![Goals Windows](screenshots/objetivos_windows.png) | ![Search Windows](screenshots/buscador_windows.png) |
 
-## Security Note
+| Desktop (Windows) — Drafts & CRM | Mobile (Android) — Adaptive UI |
+| :---: | :---: |
+| ![CRM Windows](screenshots/correos_windows.png) | <img src="screenshots/objetivos_android.png" width="250" alt="Android UI" /> |
 
-All API keys and Firebase configuration files are excluded from version control via `.gitignore`.
+## Project Structure
 
-## © Copyright & License
-
-Copyright © 2026 Iker Cruzado Jiménez. All rights reserved.
-
-This repository is publicly available strictly for **portfolio and code-review purposes**. No license is granted to copy, modify, distribute, or use this code for commercial or non-commercial purposes without explicit written permission from the author.
+```text
+lib/
+├── main.dart            # Adaptive layout (BottomNavigationBar on Android / Sidebar on Windows)
+├── app_colors.dart      # Centralized 60-30-10 color palette & status tokens
+├── objetivos_view.dart  # Daily, Weekly & dynamic Global Goals management
+├── buscador_view.dart   # Job search filters & anti-duplicate contact control
+└── correos_view.dart    # Editable email drafts & selected companies CRM grid
