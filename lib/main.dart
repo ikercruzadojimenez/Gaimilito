@@ -6,16 +6,16 @@ import 'buscador_view.dart';
 import 'correos_view.dart';
 
 void main() {
-  runApp(const GaimilitoApp());
+  runApp(const gmAIl());
 }
 
-class GaimilitoApp extends StatelessWidget {
-  const GaimilitoApp({super.key});
+class gmAIl extends StatelessWidget {
+  const gmAIl({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'gaimilito',
+      title: 'gmAIl',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -53,6 +53,27 @@ class _MainLayoutState extends State<MainLayout> {
     });
   }
 
+  Widget _buildLogoText({double fontSize = 22}) {
+    return Text.rich(
+      TextSpan(
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: FontWeight.bold,
+          color: AppColors.textoPrincipal,
+          letterSpacing: -0.5,
+        ),
+        children: const [
+          TextSpan(text: 'gm'),
+          TextSpan(
+            text: 'AI',
+            style: TextStyle(color: AppColors.primario),
+          ),
+          TextSpan(text: 'l'),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final bool isMobile = Platform.isAndroid;
@@ -60,10 +81,7 @@ class _MainLayoutState extends State<MainLayout> {
     if (isMobile) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'gaimilito',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
+          title: _buildLogoText(fontSize: 20),
           elevation: 0,
           backgroundColor: AppColors.tarjeta,
           foregroundColor: AppColors.textoPrincipal,
@@ -111,19 +129,12 @@ class _MainLayoutState extends State<MainLayout> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 24.0,
                       vertical: 32.0,
                     ),
-                    child: Text(
-                      'gaimilito',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textoPrincipal,
-                      ),
-                    ),
+                    child: _buildLogoText(fontSize: 24),
                   ),
                   _buildSidebarItem(
                     icon: Icons.track_changes,

@@ -1,4 +1,4 @@
-# gaimilito
+# gmAIl
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
@@ -33,3 +33,12 @@ lib/
 ├── objetivos_view.dart  # Daily, Weekly & dynamic Global Goals management
 ├── buscador_view.dart   # Job search filters & anti-duplicate contact control
 └── correos_view.dart    # Editable email drafts & selected companies CRM grid
+```
+
+## Getting Started (Local Frontend Preview)
+
+```bash
+git clone https://github.com/ikercruzadojimenez/gmAIl.git
+cd gmAIl
+flutter pub get
+flutter run
